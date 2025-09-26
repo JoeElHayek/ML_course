@@ -6,7 +6,7 @@ import numpy as np
 def load_data(sub_sample=True, add_outlier=False):
     """Load data and convert it to the metric system."""
     path_dataset = "height_weight_genders.csv"
-    data = np.genfromtxt(path_dataset, delimiter=",", skip_header=1, usecols=[1, 2])
+    data = np.genfromtxt(path_dataset, delimiter=",", skip_header=1, usecols=[1, 2]) #function typically used for datasets with missing values or inconsistencies
     height = data[:, 0]
     weight = data[:, 1]
     gender = np.genfromtxt(
@@ -47,7 +47,7 @@ def build_model_data(height, weight):
     y = weight
     x = height
     num_samples = len(y)
-    tx = np.c_[np.ones(num_samples), x]
+    tx = np.c_[np.ones(num_samples), x] #Translates slice objects to concatenation along the second axis.
     return y, tx
 
 
