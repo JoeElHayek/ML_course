@@ -19,4 +19,8 @@ def compute_loss(y, tx, w):
     # INSERT YOUR CODE HERE
     # TODO: compute loss by MSE
     # ***************************************************
-    raise NotImplementedError
+    y.ravel() # to ensure shape of (N,)
+    pred = tx @ w 
+    e = y - pred
+
+    return 0.5*np.mean(e**2)

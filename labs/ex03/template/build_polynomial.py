@@ -12,4 +12,9 @@ def build_poly(x, degree):
     # this function should return the matrix formed
     # by applying the polynomial basis to the input data
     # ***************************************************
-    raise NotImplementedError
+    x= x.reshape(-1, 1)
+    degrees = np.arange(degree+1)
+    phi = np.power(x, degrees)
+    
+
+    return phi
